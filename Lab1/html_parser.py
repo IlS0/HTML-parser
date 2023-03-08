@@ -66,7 +66,7 @@ def login(cabinet_url):
     options.add_experimental_option('excludeSwitches', ['enable-logging']) #чтоб хром не писал ворнинги на какие-то usb
 
     try:
-        driver = webdriver.Chrome(options=options,executable_path="D:\\python\\Сети\\chromedriver\\chromedriver.exe")
+        driver = webdriver.Chrome(options=options,executable_path="Computer-networks\\Lab1\\chromedriver\\chromedriver.exe")
         driver.get(cabinet_url)
 
         login_field = driver.find_element(By.NAME,"email")
