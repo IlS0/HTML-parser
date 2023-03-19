@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
+from selenium.webdriver.chrome.service import Service
 
 def get_pages_number(url):
     '''
@@ -63,8 +63,7 @@ def login(cabinet_url):
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
     try:
-        driver = webdriver.Chrome(
-            options=options, executable_path="Computer-networks\\Lab1\\chromedriver\\chromedriver.exe")
+        driver = webdriver.Chrome(options=options,service=Service("HTML-parser/chromedriver/chromedriver.exe"))
         driver.get(cabinet_url)
 
         login_field = driver.find_element(By.NAME, "email")
@@ -101,7 +100,7 @@ if __name__ == "__main__":
         get_descriptions(soup, res_dict)
 
     csv_table = pd.DataFrame(res_dict)
-    csv_table.to_csv('result.csv')
+    csv_table.to_csv('result.csv', encoding='utf-16')
 
     # проверка результата
     # csv = pd.read_csv("result.csv", index_col=0)
