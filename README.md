@@ -21,5 +21,6 @@ pip install selenium
 
 ### Запуск
 
+Перед запуском убедитесь, что у вас установлен браузер Google Chrome. Если нет, то установите с [официального сайта](https://www.google.com/intl/ru_ru/chrome/).
 Для запуска скрипта, выполните команду `python html_parser.py`.
 
